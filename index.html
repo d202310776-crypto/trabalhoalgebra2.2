@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Qualidade: Tomates</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Qualidade de Tomates</h1>
+            <p>Identificador de defeitos via Traço Matricial</p>
+        </header>
+
+        <main>
+            <section class="reference-panel">
+                <h2>Banco de Referência (Base Matricial)</h2>
+                <div class="reference-gallery">
+                    <div class="ref-item">
+                        <img src="img/saudavel.jpg" alt="Tomate Saudável" id="ref-healthy" class="ref-img">
+                        <span>Saudável</span>
+                    </div>
+                    <div class="ref-item">
+                        <img src="img/verde.jpg" alt="Tomate Verde" id="ref-unripe" class="ref-img">
+                        <span>Verde</span>
+                    </div>
+                    <div class="ref-item">
+                        <img src="img/podre1.jpg" alt="Tomate Podre (Leve)" id="ref-rotten1" class="ref-img">
+                        <span>Podre (Tipo A)</span>
+                    </div>
+                    <div class="ref-item">
+                        <img src="img/podre2.jpg" alt="Tomate Podre (Grave)" id="ref-rotten2" class="ref-img">
+                        <span>Podre (Tipo B)</span>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="analysis-panel">
+                <h2>Análise de Amostra</h2>
+                
+                <div class="upload-area">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <label for="imageInput" class="upload-btn">
+                        Escolher Imagem do Tomate
+                    </label>
+                </div>
+
+                <div class="preview-container" id="previewContainer" style="display: none;">
+                    <img id="userImage" src="" alt="Imagem do Usuário">
+                    <p class="status-text">Imagem carregada e pronta para conversão matricial.</p>
+                </div>
+
+                <button id="analyzeBtn" class="action-btn" disabled>Calcular Similaridade (Traço)</button>
+            </section>
+
+            <section id="resultSection" class="result-panel hidden">
+                <h3>Resultado da Análise</h3>
+                <div id="resultOutput" class="result-text"></div>
+                <div id="mathDetails" class="math-log"></div>
+            </section>
+        </main>
+    </div>
+
+    <canvas id="processingCanvas" style="display: none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
